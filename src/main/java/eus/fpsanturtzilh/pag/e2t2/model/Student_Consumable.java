@@ -2,6 +2,7 @@ package eus.fpsanturtzilh.pag.e2t2.model;
 
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,10 +17,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Table(name="student_consumables")
-public class Student_consumable extends Auditable{
+public class Student_Consumable extends Auditable{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column
 	private Date date;
+	@Column
 	private int quantity;
 }

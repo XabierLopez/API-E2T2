@@ -1,5 +1,6 @@
 package eus.fpsanturtzilh.pag.e2t2.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,8 +19,12 @@ public class Equipment extends Auditable{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column
 	private String label;
+	@Column
 	private String name;
+	@Column
 	private String description;
+	@Column
 	private String brand;
 }
