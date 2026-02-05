@@ -1,12 +1,18 @@
 package eus.fpsanturtzilh.pag.e2t2.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,4 +41,8 @@ public class Consumable extends Auditable{
 	private int min_stock;
 	@Column
 	private Date expiration_date;
+	
+	@OneToMany(mappedBy = "Consumable", cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonManagedReference
+	private List<Category> categories = new ArrayList<>();
 }
