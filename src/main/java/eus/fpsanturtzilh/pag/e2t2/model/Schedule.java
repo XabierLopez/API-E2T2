@@ -23,7 +23,7 @@ public class Schedule extends Auditable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column
-	private int day;
+	private Integer day;
 	@Column
 	private Date start_date;
 	@Column

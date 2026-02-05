@@ -36,9 +36,9 @@ public class Consumable extends Auditable{
 	@Column
 	private String brand;
 	@Column
-	private int stock;
+	private Integer stock;
 	@Column
-	private int min_stock;
+	private Integer min_stock;
 	@Column
 	private Date expiration_date;
 	

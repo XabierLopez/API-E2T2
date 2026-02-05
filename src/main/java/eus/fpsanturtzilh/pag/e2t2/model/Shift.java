@@ -20,5 +20,5 @@ public class Shift extends Auditable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column
-	private char type;
+	private Character type;
 }

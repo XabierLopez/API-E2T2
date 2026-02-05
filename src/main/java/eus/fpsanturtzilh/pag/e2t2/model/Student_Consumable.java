@@ -28,7 +28,7 @@ public class Student_Consumable extends Auditable{
 	@Column
 	private Date date;
 	@Column
-	private int quantity;
+	private Integer quantity;
 	
 	@ManyToOne
 	@JoinColumn(name = "student_id")

@@ -28,6 +28,6 @@ public class Service extends Auditable{
 	@Column
 	private BigDecimal home_price;
 	@Column
-	private int duration;
+	private Integer duration;
 	
 }
