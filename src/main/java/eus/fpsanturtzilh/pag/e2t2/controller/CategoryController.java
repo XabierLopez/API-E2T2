@@ -1,4 +1,4 @@
-package eus.fpsanturtzilh.pag.controller;
+package eus.fpsanturtzilh.pag.e2t2.controller;
 
 import java.util.List;
 

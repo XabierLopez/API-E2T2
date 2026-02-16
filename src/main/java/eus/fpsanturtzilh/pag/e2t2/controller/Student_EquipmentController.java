@@ -1,4 +1,4 @@
-package eus.fpsanturtzilh.pag.controller;
+package eus.fpsanturtzilh.pag.e2t2.controller;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import eus.fpsanturtzilh.pag.e2t2.service.Student_EquipmentService;
 import eus.fpsanturtzilh.pag.e2t2.model.Student_Equipment;
 
 @RestController 
-@RequestMapping("/api/equipments")
+@RequestMapping("/api/student_equipments")
 public class Student_EquipmentController {
 	
 	private final Student_EquipmentService service;

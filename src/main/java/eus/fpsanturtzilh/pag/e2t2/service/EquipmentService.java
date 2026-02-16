@@ -2,9 +2,12 @@ package eus.fpsanturtzilh.pag.e2t2.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import eus.fpsanturtzilh.pag.e2t2.model.Equipment;
 import eus.fpsanturtzilh.pag.e2t2.repository.EquipmentRepository;
 
+@Service
 public class EquipmentService {
 private final EquipmentRepository repository;
 	

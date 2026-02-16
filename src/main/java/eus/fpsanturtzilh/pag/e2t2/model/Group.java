@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter 
 @Setter
 @NoArgsConstructor
-@Table(name="groups")
+@Table(name="studentgroups")
 public class Group extends Auditable{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

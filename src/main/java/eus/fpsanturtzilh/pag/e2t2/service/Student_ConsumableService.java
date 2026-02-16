@@ -2,9 +2,12 @@ package eus.fpsanturtzilh.pag.e2t2.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import eus.fpsanturtzilh.pag.e2t2.model.Student_Consumable;
 import eus.fpsanturtzilh.pag.e2t2.repository.Student_ConsumableRepository;
 
+@Service
 public class Student_ConsumableService {
 	private final Student_ConsumableRepository repository;
 	
