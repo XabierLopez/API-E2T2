@@ -14,16 +14,16 @@ public class Student_EquipmentService {
 		this.repository = repository;
 	}
 	
-	public List<Student_Equipment> getAllTaldes(){
+	public List<Student_Equipment> getAllStudent_Equipments(){
 		return repository.findAll();
 	}
-	public Student_Equipment saveTaldes(Student_Equipment talde) {
-		return repository.save(talde);
+	public Student_Equipment saveStudent_Equipment(Student_Equipment student_equipment) {
+		return repository.save(student_equipment);
 	}
 	public void deleteStudent_Equipment(Long id) {
 		repository.deleteById(id);
 	}
-	public Student_Equipment updateTalde(Long id, Student_Equipment updateStudent_Equipment) {
+	public Student_Equipment updateStudent_Equipment(Long id, Student_Equipment updateStudent_Equipment) {
 		Student_Equipment existingStudent_Equipment = repository.findById(id).orElseThrow(() -> new RuntimeException("Student_Equipmenta not found with id" + id));
 		
 		existingStudent_Equipment.setStart_datetime(updateStudent_Equipment.getStart_datetime());

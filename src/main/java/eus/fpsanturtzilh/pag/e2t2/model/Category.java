@@ -1,3 +1,4 @@
+
 package eus.fpsanturtzilh.pag.e2t2.model;
 
 import jakarta.persistence.Column;
@@ -16,9 +17,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @Table(name="categories")
 public class Category extends Auditable{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Long id;
-	@Column
+	@Column(nullable = false)
 	 private String name;
+
 }

@@ -12,11 +12,11 @@ public class Student_ConsumableService {
 		this.repository = repository;
 	}
 	
-	public List<Student_Consumable> getAllStudent_Consumable(){
+	public List<Student_Consumable> getAllStudent_Consumables(){
 		return repository.findAll();
 	}
-	public Student_Consumable saveStudent_Consumable(Student_Consumable Students_Consumable) {
-		return repository.save(Students_Consumable);
+	public Student_Consumable saveStudent_Consumable(Student_Consumable student_consumable) {
+		return repository.save(student_consumable);
 	}
 	public void deleteStudent_Consumable(Long id) {
 		repository.deleteById(id);
@@ -29,6 +29,7 @@ public class Student_ConsumableService {
 		
 		return repository.save(existingStudent_Consumable);
 	}
+
 
 	public static Student_Consumable findById(Long id) {
 		// TODO Auto-generated method stub

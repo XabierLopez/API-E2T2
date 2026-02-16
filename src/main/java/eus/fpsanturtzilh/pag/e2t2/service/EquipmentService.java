@@ -15,7 +15,7 @@ private final EquipmentRepository repository;
 	public List<Equipment> getAllEquipments(){
 		return repository.findAll();
 	}
-	public Equipment saveEquipments(Equipment talde) {
+	public Equipment saveEquipment(Equipment talde) {
 		return repository.save(talde);
 	}
 	public void deleteEquipment(Long id) {

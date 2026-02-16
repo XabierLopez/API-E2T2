@@ -15,7 +15,7 @@ public class ConsumableService {
 	public List<Consumable> getAllConsumables(){
 		return repository.findAll();
 	}
-	public Consumable saveConsumables(Consumable talde) {
+	public Consumable saveConsumable(Consumable talde) {
 		return repository.save(talde);
 	}
 	public void deleteConsumable(Long id) {
