@@ -36,7 +36,7 @@ public class Student_Consumable extends Auditable{
 	private Student student;
 
 	@ManyToOne
-	@JoinColumn(name = "consumables_id")
+	@JoinColumn(name = "consumable_id")
 	@JsonBackReference
-	private Consumable consumables;
+	private Consumable consumable;
 }

@@ -7,6 +7,6 @@ import eus.fpsanturtzilh.pag.e2t2.model.Equipment;
 public interface EquipmentRepository extends JpaRepository <Equipment, Long> {
 
 	
-	public Equipment findFirstByIzena(String izena);
+	public Equipment findFirstByName(String name);
 
 }

@@ -1,10 +1,16 @@
 package eus.fpsanturtzilh.pag.e2t2.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,4 +33,8 @@ public class Equipment extends Auditable{
 	private String description;
 	@Column
 	private String brand;
+	
+	@OneToMany(mappedBy = "equipment")
+    @JsonManagedReference
+    private List<Student_Equipment> student_equipments = new ArrayList<>();
 }

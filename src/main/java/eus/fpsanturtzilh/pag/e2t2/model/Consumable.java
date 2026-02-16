@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
@@ -12,6 +13,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -42,7 +45,13 @@ public class Consumable extends Auditable{
 	@Column
 	private Date expiration_date;
 	
-	@OneToMany(mappedBy = "Consumable", cascade = CascadeType.ALL, orphanRemoval = true)
-	@JsonManagedReference
-	private List<Category> categories = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    @JsonBackReference 
+    private Category category;
+    
+    @OneToMany(mappedBy = "consumable")
+    @JsonManagedReference
+    private List<Student_Consumable> student_consumables = new ArrayList<>();
 }
