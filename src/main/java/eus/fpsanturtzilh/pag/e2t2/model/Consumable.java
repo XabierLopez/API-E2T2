@@ -1,13 +1,12 @@
 package eus.fpsanturtzilh.pag.e2t2.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -43,7 +42,7 @@ public class Consumable extends Auditable{
 	@Column
 	private Integer min_stock;
 	@Column
-	private Date expiration_date;
+	private LocalDate expiration_date;
 	
 
     @ManyToOne

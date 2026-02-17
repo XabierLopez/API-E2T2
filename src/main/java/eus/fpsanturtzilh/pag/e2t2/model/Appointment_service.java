@@ -20,5 +20,5 @@ public class Appointment_service extends Auditable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column
-	private String comment;
+	private String comment;//
 }

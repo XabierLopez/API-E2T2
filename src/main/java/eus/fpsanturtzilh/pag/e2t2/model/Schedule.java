@@ -1,8 +1,7 @@
 package eus.fpsanturtzilh.pag.e2t2.model;
 
-import java.sql.Time;
-import java.util.Date;
-
+import java.time.LocalDate;
+import java.time.LocalTime;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,11 +24,11 @@ public class Schedule extends Auditable {
 	@Column
 	private Integer day;
 	@Column
-	private Date start_date;
+	private LocalDate start_date;
 	@Column
-	private Date end_date;
+	private LocalDate end_date;
 	@Column
-	private Time start_time;
+	private LocalTime start_time;
 	@Column
-	private Time end_time;
+	private LocalTime end_time;
 }

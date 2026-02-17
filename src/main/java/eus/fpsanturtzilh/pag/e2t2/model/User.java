@@ -25,4 +25,6 @@ public class User extends Auditable{
 	private String email;
 	@Column
 	private String rol;
+	@Column
+	private String password;//SHA-256 bidez hasheatutako pasahitza
 }

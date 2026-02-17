@@ -33,9 +33,9 @@ public class Appointment extends Auditable{
 	@Column
 	private LocalTime start_time;
 	@Column
-	private LocalTime end_time;
+	private LocalTime end_time;//
 	@Column
-	private String comment;
+	private String comment;//
 	@Column
 	private String name;
 	@ManyToOne

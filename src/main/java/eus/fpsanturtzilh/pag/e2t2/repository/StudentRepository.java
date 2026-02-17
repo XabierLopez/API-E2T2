@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import eus.fpsanturtzilh.pag.e2t2.model.Student;
 
 public interface StudentRepository extends JpaRepository <Student, Long>{
-	public Student findFirstByName(String name);
+	public List<Student> findByName(String name);
 }
