@@ -24,6 +24,16 @@ public class UserController {
 		return service.getAllUsers();
 	}
 	
+	@GetMapping("/{id}")
+	public User getUserById(@PathVariable Long id){
+		return service.getUserById(id);
+	}
+	
+	@PostMapping("/login")
+	public User getUserLogin(@RequestBody User user){
+		return service.getUserLogin(user.getUsername(), user.getPassword());
+	}
+	
 	@PostMapping
 	public User addUser (@RequestBody User user) {
 		return service.saveUser(user);

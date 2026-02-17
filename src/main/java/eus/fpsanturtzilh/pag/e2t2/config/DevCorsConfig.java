@@ -10,7 +10,7 @@ public class DevCorsConfig {
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
-        System.out.println("⚡ CORS CONFIGURATION LOADED"); // Verifica en consola
+        System.out.println("CORS KONFIGURAZIOA KARGATU DA");
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {

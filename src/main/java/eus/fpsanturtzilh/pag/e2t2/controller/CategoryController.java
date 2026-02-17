@@ -9,6 +9,7 @@ import eus.fpsanturtzilh.pag.e2t2.model.Category;
 
 @RestController 
 @RequestMapping("/api/categories")
+//@CrossOrigin(origins = "http://localhost:8100", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
 public class CategoryController {
 	
 	private final CategoryService service;

@@ -8,5 +8,6 @@ import eus.fpsanturtzilh.pag.e2t2.model.User;
 
 public interface UserRepository extends JpaRepository <User, Long>{
 	public Optional<User> findFirstByUsername(String username);
-	boolean existsByUsername(String username);
+	public boolean existsByUsername(String username);
+	public Optional<User> findFirstByUsernameAndPassword(String username, String password);
 }
