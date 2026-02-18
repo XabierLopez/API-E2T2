@@ -84,8 +84,7 @@ public class ScheduleService {
         scheduleOld.setEnd_time(updatedSchedule.getEnd_time());
 
         if (updatedSchedule.getGroup() != null) {
-            Group group = groupRepo.findById(updatedSchedule.getGroup().getId())
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Group not found with id " + updatedSchedule.getGroup().getId()));
+            Group group = groupRepo.findById(updatedSchedule.getGroup().getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Group not found with id " + updatedSchedule.getGroup().getId()));
             scheduleOld.setGroup(group);
         }
 
