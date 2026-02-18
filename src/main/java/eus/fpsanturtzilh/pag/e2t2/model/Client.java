@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
@@ -13,7 +14,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 import lombok.Getter;
@@ -42,6 +45,16 @@ public class Client extends Auditable{
 	@Column
 	private Boolean home_client;
 	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
-	@JsonManagedReference
+	@JsonManagedReference("client-appointment")
 	private List<Appointment> appointments;
+	
+	// @OneToOne
+    // @JoinColumn(name = "user_id", nullable = false)
+    // @JsonManagedReference("user-client")
+    // private User user;
+
+	@OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
+    @JsonBackReference("user-client")
+    private User user;
+	
 }

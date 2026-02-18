@@ -35,6 +35,6 @@ public class Equipment extends Auditable{
 	private String brand;
 	
 	@OneToMany(mappedBy = "equipment")
-    @JsonManagedReference
+    @JsonManagedReference("equipment-student")
     private List<Student_Equipment> student_equipments = new ArrayList<>();
 }

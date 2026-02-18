@@ -49,10 +49,10 @@ public class Appointment extends Auditable{
 	private String name;
 	@ManyToOne
 	@JoinColumn(name = "client_id", nullable = false)
-	@JsonBackReference
+	@JsonBackReference("client-appointment")
 	private Client client;
 	
 	@OneToMany(mappedBy = "appointment")
-	@JsonManagedReference(value = "appointment-appointmentServices") //jsonbackereference-ek gako bat behar du modelo berean bat baino gehiago badago
+	@JsonManagedReference("appointment-appointmentService") //jsonbackereference-ek gako bat behar du modelo berean bat baino gehiago badago
 	private List<Appointment_service> appointmentServices;
 }

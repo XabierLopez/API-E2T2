@@ -47,10 +47,10 @@ public class Consumable extends Auditable{
 
     @ManyToOne
     @JoinColumn(name = "category_id")
-    @JsonBackReference 
+    @JsonBackReference("category-consumable")
     private Category category;
     
     @OneToMany(mappedBy = "consumable")
-    @JsonManagedReference
+    @JsonManagedReference("consumable-student")
     private List<Student_Consumable> student_consumables = new ArrayList<>();
 }

@@ -35,6 +35,6 @@ public class ServiceEntity extends Auditable{
 	private Integer duration;
 	
 	@OneToMany(mappedBy = "service")
-	@JsonManagedReference(value = "service-appointmentServices")
+	@JsonManagedReference("service-appointmentService")
 	private List<Appointment_service> appointmentServices;
 }

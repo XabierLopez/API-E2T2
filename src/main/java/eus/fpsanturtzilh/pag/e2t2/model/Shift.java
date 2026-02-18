@@ -28,6 +28,6 @@ public class Shift extends Auditable{
 	
 	@ManyToOne
 	@JoinColumn(name = "student_id", nullable = false)
-	@JsonBackReference
+	@JsonBackReference("student-shift")
 	private Student student;
 }

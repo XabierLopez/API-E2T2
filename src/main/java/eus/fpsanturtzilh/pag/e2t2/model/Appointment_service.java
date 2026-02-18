@@ -27,11 +27,11 @@ public class Appointment_service extends Auditable {
 	
 	@ManyToOne
 	@JoinColumn(name = "service_id", nullable = false)
-	@JsonBackReference(value = "service-appointmentServices")//jsonmanagedreference-ek gako bat behar du modelo berean bat baino gehiago badago
+	@JsonBackReference("service-appointmentService")//jsonmanagedreference-ek gako bat behar du modelo berean bat baino gehiago badago
 	private ServiceEntity service;
 
 	@ManyToOne
 	@JoinColumn(name = "appointment_id", nullable = false)
-	@JsonBackReference(value = "appointment-appointmentServices")//jsonmanagedreference-ek gako bat behar du modelo berean bat baino gehiago badago
+	@JsonBackReference("appointment-appointmentService")//jsonmanagedreference-ek gako bat behar du modelo berean bat baino gehiago badago
 	private Appointment appointment;
 }

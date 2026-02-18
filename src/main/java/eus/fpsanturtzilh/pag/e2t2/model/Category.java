@@ -25,6 +25,6 @@ public class Category extends Auditable {
 	private String name;
 
 	@OneToMany(mappedBy = "category")
-	@JsonManagedReference
+	@JsonManagedReference("category-consumable")
 	private List<Consumable> consumables = new ArrayList<>();
 }

@@ -44,6 +44,6 @@ public class Schedule extends Auditable {
 	
 	@ManyToOne
     @JoinColumn(name = "group_id")
-    @JsonBackReference
+    @JsonBackReference("group-schedule")
     private Group group;
 }

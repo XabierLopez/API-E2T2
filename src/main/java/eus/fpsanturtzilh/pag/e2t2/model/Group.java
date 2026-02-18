@@ -34,6 +34,6 @@ public class Group extends Auditable{
 	private String name;
 	
 	@OneToMany(mappedBy = "group", cascade = CascadeType.ALL, orphanRemoval = true) // feth type lazy defektuz, beraz transaktional erabili get egingo den metodoan
-    @JsonManagedReference
+    @JsonManagedReference("group-schedule")
     private List<Schedule> schedules;
 }

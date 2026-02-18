@@ -32,11 +32,11 @@ public class Student_Consumable extends Auditable{
 	
 	@ManyToOne
 	@JoinColumn(name = "student_id")
-	@JsonBackReference
+	@JsonBackReference("student-consumable")
 	private Student student;
 
 	@ManyToOne
 	@JoinColumn(name = "consumable_id")
-	@JsonBackReference
+	@JsonBackReference("consumable-student")
 	private Consumable consumable;
 }
