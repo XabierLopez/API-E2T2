@@ -58,6 +58,16 @@ public class UserService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Password cannot be null or empty");
         }
 
+        if (user.getClient() != null && user.getClient().getId() != null) {
+            Client client = clientRepository.findById(user.getClient().getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Client not found with id " + user.getClient().getId()));
+            user.setClient(client);
+        }
+        
+        if (user.getStudent() != null && user.getStudent().getId() != null) {
+            Student student = studentRepository.findById(user.getStudent().getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Student not found with id " + user.getStudent().getId()));
+            user.setStudent(student);
+        }
+        
         user.setPassword(hashPassword(user.getPassword()));//pasahitza hasheatuta gorde beti, beraz textu laua bezala jasotzea espero da
         return repository.save(user);
     }

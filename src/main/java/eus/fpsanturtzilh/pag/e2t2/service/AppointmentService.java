@@ -44,9 +44,9 @@ public class AppointmentService {
         if (appointment.getStart_time() == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Start time cannot be null");
         }
-        if (appointment.getEnd_time() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "End time cannot be null");
-        }
+//        if (appointment.getEnd_time() == null) {
+//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "End time cannot be null");
+//        }
         if (appointment.getName() == null || appointment.getName().isBlank()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Name cannot be null or blank");
         }
@@ -73,9 +73,9 @@ public class AppointmentService {
         if (updatedAppointment.getStart_time() == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Start time cannot be null");
         }
-        if (updatedAppointment.getEnd_time() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "End time cannot be null");
-        }
+//        if (updatedAppointment.getEnd_time() == null) {
+//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "End time cannot be null");
+//        }
         if (updatedAppointment.getName() == null || updatedAppointment.getName().isBlank()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Name cannot be null or blank");
         }
