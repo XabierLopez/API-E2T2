@@ -15,6 +15,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -58,4 +60,9 @@ public class Student extends Auditable{
 	@OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
     @JsonBackReference("user-student")
     private User user;
+	
+	@ManyToOne
+    @JoinColumn(name = "group_id")
+    @JsonBackReference("group-student")
+    private Group group;
 }
