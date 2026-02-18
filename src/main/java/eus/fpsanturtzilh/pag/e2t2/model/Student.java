@@ -39,5 +39,8 @@ public class Student extends Auditable{
 	@JsonManagedReference
 	private List<Student_Consumable> student_consumables = new ArrayList<>();
 	
+	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<Shift> shifts = new ArrayList<>();
 	
 }
