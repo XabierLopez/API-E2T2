@@ -9,16 +9,24 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import eus.fpsanturtzilh.pag.e2t2.model.Client;
+import eus.fpsanturtzilh.pag.e2t2.model.Student;
 import eus.fpsanturtzilh.pag.e2t2.model.User;
+import eus.fpsanturtzilh.pag.e2t2.repository.ClientRepository;
+import eus.fpsanturtzilh.pag.e2t2.repository.StudentRepository;
 import eus.fpsanturtzilh.pag.e2t2.repository.UserRepository;
 
 @Service
 public class UserService {
 
     private final UserRepository repository;
+    private final ClientRepository clientRepository;
+    private final StudentRepository studentRepository;
 
-    public UserService(UserRepository repository) {
+    public UserService(UserRepository repository, ClientRepository clientRepository, StudentRepository studentRepository) {
         this.repository = repository;
+        this.clientRepository=clientRepository;
+        this.studentRepository=studentRepository;
     }
 
     public List<User> getAllUsers() {
@@ -91,6 +99,16 @@ public class UserService {
         }
         existingUser.setPassword(hashPassword(user.getPassword()));//pasahitza hasheatuta gorde beti, beraz textu laua bezala jasotzea espero da
 
+        if (user.getClient() != null && user.getClient().getId() != null) {
+            Client client = clientRepository.findById(user.getClient().getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Client not found with id " + user.getClient().getId()));
+            existingUser.setClient(client);
+        }
+        
+        if (user.getStudent() != null && user.getStudent().getId() != null) {
+            Student student = studentRepository.findById(user.getStudent().getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Student not found with id " + user.getStudent().getId()));
+            existingUser.setStudent(student);
+        }
+        
         return repository.save(existingUser);
     }
 

@@ -2,6 +2,9 @@ package eus.fpsanturtzilh.pag.e2t2.model;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
@@ -21,6 +24,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Table(name="students_equipments")
+@SQLDelete(sql = "UPDATE students_equipments SET deleted_at = NOW() WHERE id = ?") //soft deleterako anotazioa, ezabatu beharrean deleted_at eguneratu ezabatutako momentuaren timestamp batekin
+@SQLRestriction("deleted_at IS NULL")//AND deleted_at IS NULL gehitu sql eragiketa guztiei, horrela timestamp dutenak ignoratuta
 public class Student_Equipment extends Auditable{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
