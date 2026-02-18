@@ -8,8 +8,11 @@ import jakarta.persistence.PreUpdate;
 
 @MappedSuperclass
 public abstract class Auditable {
+	@SuppressWarnings("unused")
 	private LocalDateTime created_at;
+	@SuppressWarnings("unused")
 	private LocalDateTime updated_at;
+	@SuppressWarnings("unused")
 	private LocalDateTime deleted_at;
 	
 

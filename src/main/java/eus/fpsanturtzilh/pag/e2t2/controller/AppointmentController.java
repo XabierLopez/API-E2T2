@@ -11,7 +11,7 @@ import eus.fpsanturtzilh.pag.e2t2.service.AppointmentService;
 @RequestMapping("/api/appointments")
 public class AppointmentController {
 
-    private final AppointmentService service;
+	private final AppointmentService service;
 
     public AppointmentController(AppointmentService service) {
         this.service = service;

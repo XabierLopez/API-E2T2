@@ -23,6 +23,7 @@ public class AppointmentService {
         this.clientRepo = clientRepo;
     }
 
+
     public List<Appointment> getAllAppointments() {
         return appointmentRepo.findAll();
     }
@@ -52,7 +53,8 @@ public class AppointmentService {
         if (appointment.getClient() == null || appointment.getClient().getId() == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Client ID cannot be null");
         }
-        Client client = clientRepo.findById(appointment.getClient().getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Client not found with id " + appointment.getClient().getId()));
+        Client client = clientRepo.findById(appointment.getClient().getId())
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Client not found with id " + appointment.getClient().getId()));
         appointment.setClient(client);
         return appointmentRepo.save(appointment);
     }

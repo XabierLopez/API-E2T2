@@ -2,11 +2,13 @@ package eus.fpsanturtzilh.pag.e2t2.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,9 +17,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -49,4 +51,8 @@ public class Appointment extends Auditable{
 	@JoinColumn(name = "client_id", nullable = false)
 	@JsonBackReference
 	private Client client;
+	
+	@OneToMany(mappedBy = "appointment")
+	@JsonManagedReference(value = "appointment-appointmentServices") //jsonbackereference-ek gako bat behar du modelo berean bat baino gehiago badago
+	private List<Appointment_service> appointmentServices;
 }

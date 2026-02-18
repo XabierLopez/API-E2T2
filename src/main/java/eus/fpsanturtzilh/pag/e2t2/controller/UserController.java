@@ -4,9 +4,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
 
-import eus.fpsanturtzilh.pag.e2t2.service.CategoryService;
 import eus.fpsanturtzilh.pag.e2t2.service.UserService;
-import eus.fpsanturtzilh.pag.e2t2.model.Category;
 import eus.fpsanturtzilh.pag.e2t2.model.User;
 
 @RestController 
